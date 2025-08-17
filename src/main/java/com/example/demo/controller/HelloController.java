@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class HelloController {
 
-    private List<Users> usersList = new ArrayList<>();
+    private List<Users> users = new ArrayList<>();
 
     @GetMapping("/hello")
     public String SayHello(){
@@ -21,13 +21,19 @@ public class HelloController {
 
     @PostMapping("/user")
     public String createUser(@RequestBody Users user){
-        usersList.add(user);
+        users.add(user);
         return "User added: " + user.getName();
     }
 
-    @GetMapping("userslist")
+    @PostMapping("/users")
+    public String createMultipleUsers(@RequestBody List<Users> usersList) {
+        users.addAll(usersList);
+        return usersList.size() + " users added successfully!";
+    }
+
+    @GetMapping("/userslist")
     public List<Users> getUsersList(){
-    return usersList;
+    return users;
     }
 
 }
