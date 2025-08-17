@@ -31,7 +31,7 @@ public class HelloController {
         return usersList.size() + " users added successfully!!";
     }
 
-    @GetMapping("/userslist")
+    @GetMapping("/alluserslist")
     public List<Users> getUsersList(){
     return users;
     }
