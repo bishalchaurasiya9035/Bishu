@@ -25,24 +25,13 @@ public class HelloController {
         return "User added: " + user.getName();
     }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-    @GetMapping("userslist")
-=======
->>>>>>> Stashed changes
     @PostMapping("/users")
     public String createMultipleUsers(@RequestBody List<Users> usersList) {
         users.addAll(usersList);
         return usersList.size() + " users added successfully!!";
     }
 
-<<<<<<< Updated upstream
-    @GetMapping("/userslist")
-=======
     @GetMapping("/alluserslist")
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     public List<Users> getUsersList(){
     return users;
     }
