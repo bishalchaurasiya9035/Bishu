@@ -28,7 +28,7 @@ public class HelloController {
     @PostMapping("/users")
     public String createMultipleUsers(@RequestBody List<Users> usersList) {
         users.addAll(usersList);
-        return usersList.size() + " users added successfully!";
+        return usersList.size() + " users added successfully!!";
     }
 
     @GetMapping("/userslist")
